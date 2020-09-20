@@ -68,6 +68,7 @@ class SiameseNetwork:
         self.omniglot_loader = OmniglotLoader(
             dataset_path=dataset_path, use_augmentation=use_augmentation, batch_size=batch_size)
         self.summary_writer = tf.summary.FileWriter(tensorboard_log_path)
+        # self.summary_writer = tf.compat.v1.summary.FileWriter(tensorboard_log_path)
         self._construct_siamese_architecture(learning_rate_multipliers,
                                               l2_regularization_penalization)
 
