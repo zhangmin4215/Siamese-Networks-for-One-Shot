@@ -68,6 +68,11 @@ When comparing to the original paper, there are some differences in this impleme
 - The hyperparameter optimization does not include the Siamese network architecture tuning. Since the paper already describes the best architecture, I decided to reduce the hyperparameter space search to just the other parameters. 
 - Weight initialization: I found them to not have high influence on the final results. Therefore, in this implementation the default glorot uniform initialization is used. 
 
+### Install
+
+- tensorflow==1.5.2 
+- keras==2.1.6
+
 ### Code Details
 
 There are two main files to run the code in this repo: 
@@ -96,3 +101,17 @@ Regarding the rest of the code:
 I would like to give credit to a blog post that introduced me to this paper, when I was searching for Siamese Networks. The blog post  also includes code for this paper, despite having some differences regarding this repo (Adam optimizer is used, layerwise learning-rate option is not available). It is a great blog post go check it out: 
 
 - [One Shot Learning and Siamese Networks in Keras](https://sorenbouma.github.io/blog/oneshot/)
+
+## Results
+
+|files|iterations|Mean global accuracy|
+|-----|----------|--------------------|
+|train_siamese_network.py|1000|0.14166666666666666|  
+|train_siamese_network.py|5000|0.29583333333333334| 
+|train_siamese_network.py|10000|0.4375|  
+|train_siamese_network.py|15000| 0.5 |  
+|bayesian_hyperparameter_optimization.py|500|0.11666666666666667|
+|bayesian_hyperparameter_optimization.py|10000|0.275|
+|bayesian_hyperparameter_optimization.py|20000|0.3458333333333333|
+|bayesian_hyperparameter_optimization.py|30000|0.3625|
+|bayesian_hyperparameter_optimization.py|38000|0.45416666666666666|
